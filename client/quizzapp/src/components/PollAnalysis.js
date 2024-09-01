@@ -14,7 +14,7 @@ const PollAnalysis = ({onLogout}) => {
   useEffect(() => {
     const fetchPollData = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/pollAnalysis/${id}`);
+        const response = await axios.get(`https://one2ayusharikar-gmail-com-cuvette-final-ha81.onrender.com/pollAnalysis/${id}`);
         setPollData(response.data.data);
       } catch (error) {
         console.error("Error fetching poll data:", error);
