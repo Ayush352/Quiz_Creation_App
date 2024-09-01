@@ -14,7 +14,7 @@ const QuestionAnalysis = ({onLogout}) => {
   useEffect(() => {
     const fetchQuizData = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/questionAnalysis/${id}`);
+        const response = await axios.get(`https://one2ayusharikar-gmail-com-cuvette-final-ha81.onrender.com/questionAnalysis/${id}`);
         setQuizData(response.data.data);
       } catch (error) {
         console.error("Error fetching quiz data:", error);
