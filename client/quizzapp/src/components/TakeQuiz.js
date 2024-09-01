@@ -19,7 +19,7 @@ const TakeQuiz = () => {
     useEffect(() => {
         const fetchQuizData = async () => {
             try {
-                const response = await axios.get(`http://localhost:4000/takeQuiz/${token}`);
+                const response = await axios.get(`https://one2ayusharikar-gmail-com-cuvette-final-ha81.onrender.com/takeQuiz/${token}`);
                 setQuizData(response.data);
                 initializeTimer(response.data.data.questions[0].timer);
                 setTokenId(response.data.data._id);
@@ -34,7 +34,7 @@ const TakeQuiz = () => {
     const sendResultsToServer = async () => {
         try {
             console.log('Sending results:', { correctAnswers: correctCount, wrongAnswers: wrongCount });
-            await axios.post(`http://localhost:4000/quizResults/${tokenId}`, {
+            await axios.post(`https://one2ayusharikar-gmail-com-cuvette-final-ha81.onrender.com/quizResults/${tokenId}`, {
                 correctAnswers: correctCount,
                 wrongAnswers: wrongCount
             });
@@ -99,7 +99,7 @@ const TakeQuiz = () => {
         }
 
         try {
-            await axios.put(`http://localhost:4000/updateQuestionCount/${quizData.data._id}/${currentQuestionIndex}`, {
+            await axios.put(`https://one2ayusharikar-gmail-com-cuvette-final-ha81.onrender.com/updateQuestionCount/${quizData.data._id}/${currentQuestionIndex}`, {
                 correctCount: updatedCorrectCount,
                 wrongCount: updatedWrongCount
             });
