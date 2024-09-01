@@ -1,0 +1,244 @@
+body .page-container {
+    margin: 0;
+    padding: 0;
+    background: rgba(4, 19, 37, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.card {
+    width: 90%; /* Adjust width for responsiveness */
+    height: 90%;
+    border-radius: 15px 0 0 0;
+    opacity: 1; /* Updated to be visible */
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative; /* Ensure positioning context for absolute elements */
+}
+
+.quiz-content {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.question {
+    font-family: Poppins, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 60px;
+    text-align: center;
+    color: rgba(71, 68, 68, 1);
+    margin-bottom: 20px;
+}
+
+.question-number {
+    position: absolute;
+    top: 10px; /* Adjusted to be visible within the card */
+    left: 10px; /* Adjusted to fit within the card */
+    font-family: Poppins;
+    font-size: 30px; /* Adjusted font size */
+    font-weight: 700;
+    line-height: 30px; /* Adjusted line height */
+    text-align: left;
+    color: rgba(71, 68, 68, 1);
+    width: auto; /* Adjusted width */
+    height: auto; /* Adjusted height */
+    opacity: 1; /* Ensure it's visible */
+    z-index: 10; /* Ensure visibility above other elements */
+}
+
+.options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    column-gap: 170px; /* Space between options */
+    row-gap: 70px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 800px; /* Adjust width to fit the card */
+    margin: 0 auto; /* Center options */
+}
+
+.option {
+    background: #f0f0f0;
+    border: none;
+    height: 112px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    color: black;
+    overflow: hidden; /* Prevent overflow issues */
+}
+
+.option img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio while covering the entire area */
+}
+
+.option.selected {
+    color: black;
+    border: 5px solid rgba(80, 118, 255, 1); /* Add border highlight */
+}
+
+.next-button {
+    width: 320px;
+    height: 56px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    background: rgba(96, 184, 75, 1);
+    color: white;
+    font-family: Poppins;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 45px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.result {
+    font-size: 1.5rem;
+}
+
+.timer {
+    width: 127px;
+    height: 60px;
+    opacity: 1; /* Set opacity to 1 to make it visible */
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 60px;
+    text-align: right;
+    color: rgba(214, 0, 0, 1);
+    position: absolute;
+    top: 10px; /* Keep it at the top */
+    right: 10px; /* Keep it at the right */
+    z-index: 10; /* Ensure visibility above other elements */
+}
+
+.congratulations-image {
+    margin: 20px 0;
+    width: 320px;
+    height: 323px;
+    border-radius: 5px;
+}
+
+.congrats {
+    height: 60px;
+    font-family: Poppins;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 60px;
+    text-align: center;
+    color: rgba(71, 68, 68, 1);
+}
+
+.displayScore {
+    height: 60px;
+    font-family: Poppins;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 60px;
+    text-align: center;
+    color: rgba(71, 68, 68, 1);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .card {
+        width: 95%;
+        height: auto; /* Adjust height based on content */
+    }
+
+    .question-number {
+        font-size: 24px; /* Adjust font size for tablets and smaller devices */
+        top: 15px; /* Adjust positioning */
+        left: 15px; /* Adjust positioning */
+    }
+
+    .timer {
+        font-size: 24px; /* Adjust font size for tablets and smaller devices */
+        top: 15px; /* Keep at the top */
+        right: 15px; /* Keep at the right */
+    }
+
+    .options {
+        display: flex;
+        flex-direction: column; /* Stack options vertically */
+        row-gap: 20px; /* Space between options */
+        column-gap: 0; /* No horizontal gap */
+    }
+
+    .option {
+        width: 100%; /* Full width for mobile */
+        height: auto; /* Adjust height based on content */
+        padding: 10px;
+    }
+
+    .congrats, .displayScore {
+        font-size: 30px; /* Adjust font size for mobile */
+    }
+
+    .congratulations-image {
+        width: 30%; /* Adjust image size for mobile */
+        height: auto;
+    }
+}
+
+@media (max-width: 1024px) {
+    .question-number {
+        font-size: 24px; /* Adjust font size for tablets and smaller devices */
+        top: 10px; /* Adjust positioning */
+        left: 10px; /* Adjust positioning */
+    }
+
+    .timer {
+        font-size: 24px; /* Adjust font size for tablets and smaller devices */
+        top: 10px; /* Keep at the top */
+        right: 10px; /* Keep at the right */
+    }
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    .question-number {
+        font-size: 18px; /* Further reduce font size for mobile devices */
+        top: 5px; /* Adjust positioning */
+        left: 5px; /* Adjust positioning */
+    }
+
+    .timer {
+        font-size: 18px; /* Further reduce font size for mobile devices */
+        top: 5px; /* Keep at the top */
+        right: 5px; /* Keep at the right */
+    }
+}
+
+/* Media Query for Very Small Mobile Devices */
+@media (max-width: 480px) {
+    .question-number {
+        font-size: 16px; /* Reduce font size for very small screens */
+        top: 5px; /* Adjust positioning */
+        left: 5px; /* Adjust positioning */
+    }
+
+    .timer {
+        font-size: 16px; /* Reduce font size for very small screens */
+        top: 5px; /* Keep at the top */
+        right: 5px; /* Keep at the right */
+    }
+}

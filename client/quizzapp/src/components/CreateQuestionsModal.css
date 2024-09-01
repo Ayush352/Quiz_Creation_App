@@ -1,0 +1,242 @@
+.create-quiz-modal2 {
+  width: 845px;
+  height: 671px;
+  gap: 0px;
+  background-color: white;
+  border-radius: 10px;
+  opacity: 1;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Adding a shadow for better appearance */
+  position: relative;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-quiz-overlay2 {
+  background-color: rgba(0, 0, 0, 0.5); /* Overlay with slight transparency */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.question-input {
+  width: 673px;
+  height: 50px;
+  gap: 0px;
+  border-radius: 10px;
+  background-color: #ffffff; /* Set background color to white */
+  color: #000000; /* Set text color to black */
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.25); /* Enhance the shadow for elevation */
+  padding: 10px; /* Add padding for better spacing */
+  border: none; /* Remove border for a cleaner look */
+}
+.option-type-row{
+    display: flex;
+    width: 634px;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-left: 27px;
+}
+.text-option-inputs {
+  display: flex;
+  flex-direction: column; /* Align textboxes vertically */
+  gap: 15px; /* Space between textboxes */
+  width: 673px; /* Match width of question input */
+  margin-top: 20px;
+}
+
+.option-input {
+  width: 296px;
+  height: 50px;
+  gap: 0px;
+  border-radius: 10px;
+  opacity: 0px;
+  background-color: #ffffff; /* Set background color to white */
+  color: #000000; /* Set text color to black */
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.25); /* Enhance the shadow for elevation */
+  border: none; /* Remove border for a cleaner look */
+}
+
+.option-input-wrapper {
+    display: flex;
+    align-items: center; /* Align radio button and textbox */
+    gap: 10px; /* Space between radio button and textbox */
+    position: relative; /* For positioning the delete icon */
+    cursor: pointer; /* Make the whole option clickable */
+}
+
+.option-input-wrapper.correct-answer .option-input {
+    background-color: rgba(96, 184, 75, 1);
+
+}
+
+
+.modal2-content {
+  padding: 20px;
+}
+
+.option-type-container {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.option-type-label {
+  margin-right: 15px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.option-type-radio {
+  margin-right: 15px;
+  font-size: 14px;
+}
+
+.option-type-radio input {
+  margin-right: 5px;
+}
+
+.delete-icon {
+    right: 10px; 
+    color: #dc3545; 
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.add-option-button{
+    width: 296px;
+height: 50px;
+gap: 0px;
+border-radius: 10px;
+opacity: 0px;
+background-color: white;
+color: grey;
+border: none;
+margin-left: 30px;
+}
+
+.timer-buttons-wrapper {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center the buttons horizontally */
+    margin-left: 10px; /* Space between input and buttons */
+}
+
+.timer-label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px; /* Space between label and buttons */
+}
+
+.timer-button {
+    width: 95px;
+height: 34px;
+
+gap: 0px;
+border-radius: 10px;
+opacity: 0px;
+
+
+    border: none;
+    color: rgba(159, 159, 159, 1);
+    margin-bottom: 5px; /* Space between buttons */
+    cursor: pointer;
+}
+
+.selected-timer {
+    background-color: rgba(214, 0, 0, 1); /* Red background */
+    color: white;
+}
+
+
+
+.options-timer-container {
+    display: flex;
+    justify-content: space-between; /* Space between options and Timer */
+    align-items: flex-start; /* Align to the top of the container */
+    width: 100%; /* Full width of the modal */
+}
+
+.options-container {
+    width: 70%; /* Adjust width as needed */
+}
+
+.option-input-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.option-input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between radio button, textbox, and delete icon */
+    width: 100%; /* Full width of the container */
+}
+
+.option-input-wrapper.correct-answer .option-input {
+    background-color: #d4edda; /* Light green background for the selected option's input field */
+}
+
+.top-buttons-container {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.top-button {
+    width: 58px;
+height: 58px;
+
+gap: 0px;
+opacity: 0px;
+color: rgba(159, 159, 159, 1);
+
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.question-number-button{
+    width: 58px;
+    height: 58px;
+    gap: 0px;
+    opacity: 0px;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+    margin-right: 20px;
+
+    
+
+}
+
+.add-question-button{
+    width: 42px;
+    height:102px;
+}
+
+.question-buttons{
+    display: flex;
+
+}
+
+.max-questions-text {
+    color: red; /* or any color you prefer */
+    margin-left: 10px; /* adjust spacing */
+    font-weight: bold;
+    font-size: 14px; /* adjust font size */
+    align-self: center; /* align with buttons */
+}
+
+
