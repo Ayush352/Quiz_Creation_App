@@ -20,8 +20,8 @@ const Analytics = ({onLogout}) => {
     // Fetch quizzes and polls from the database
     const fetchData = async () => {
       try {
-        const quizzesResponse = await axios.get('http://localhost:4000/users/quizzes'); // Update with your endpoint
-        const pollsResponse = await axios.get('http://localhost:4000/users/polls'); // Update with your endpoint
+        const quizzesResponse = await axios.get('https://one2ayusharikar-gmail-com-cuvette-final-ha81.onrender.com/users/quizzes'); // Update with your endpoint
+        const pollsResponse = await axios.get('https://one2ayusharikar-gmail-com-cuvette-final-ha81.onrender.com/users/polls'); // Update with your endpoint
 
         // Combine quizzes and polls data
         const combinedData = [
@@ -54,9 +54,9 @@ const Analytics = ({onLogout}) => {
   const handleDelete = async () => {
     try {
       if (itemType === 'quiz') {
-        await axios.delete(`http://localhost:4000/users/deleteQuiz/${itemToDelete}`); // Update with your endpoint
+        await axios.delete(`https://one2ayusharikar-gmail-com-cuvette-final-ha81.onrender.com/users/deleteQuiz/${itemToDelete}`); // Update with your endpoint
       } else if (itemType === 'poll') {
-        await axios.delete(`http://localhost:4000/users/deletePoll/${itemToDelete}`); // Update with your endpoint
+        await axios.delete(`https://one2ayusharikar-gmail-com-cuvette-final-ha81.onrender.com/users/deletePoll/${itemToDelete}`); // Update with your endpoint
       }
       setQuizzesAndPolls(quizzesAndPolls.filter(item => item._id !== itemToDelete));
     } catch (error) {
