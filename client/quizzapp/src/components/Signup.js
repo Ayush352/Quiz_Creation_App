@@ -18,7 +18,7 @@ const Signup = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:4000/users/signup', {
+      const response = await axios.post('https://one2ayusharikar-gmail-com-cuvette-final-ha81.onrender.com/users/signup', {
         name,
         email,
         password
