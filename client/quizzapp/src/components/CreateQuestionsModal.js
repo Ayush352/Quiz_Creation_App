@@ -155,13 +155,13 @@ const CreateQuestionsModal = ({ isOpen, onRequestClose, quizTitle, quizType }) =
                 questionText: question.questionText || 'Default Question Text'
             }));
 
-            const response = await axios.post('http://localhost:4000/users/createQuiz', { quizTitle, questions: validQuestions, quizType });
+            const response = await axios.post('https://one2ayusharikar-gmail-com-cuvette-final-ha81.onrender.com/users/createQuiz', { quizTitle, questions: validQuestions, quizType });
             
             console.log("response  ", response.data.data._id);
             console.log("response  ", response.data.data);
 
             const randomToken = response.data.data._id;
-            const newQuizLink = `http://localhost:4000/takeQuiz/${randomToken}`;
+            const newQuizLink = `https://one2ayusharikar-gmail-com-cuvette-final-ha81.onrender.com/takeQuiz/${randomToken}`;
             setIsSuccessModalOpen(true);
             setQuizLink(newQuizLink);
             navigate(`/takeQuiz/${randomToken}`);
