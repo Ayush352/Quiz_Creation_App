@@ -14,7 +14,7 @@ const TakePoll = ({handlePollAuth}) => {
     useEffect(() => {
         const fetchPollData = async () => {
             try {
-                const response = await axios.get(`http://localhost:4000/takePoll/${token}`);
+                const response = await axios.get(`https://one2ayusharikar-gmail-com-cuvette-final-ha81.onrender.com/takePoll/${token}`);
                 setPollData(response.data);
                 setTokenId(response.data.data._id);
             } catch (error) {
@@ -38,7 +38,7 @@ const TakePoll = ({handlePollAuth}) => {
         if (selectedOption) {
             // Update view count of selected option
             try {
-                await axios.put(`http://localhost:4000/updateQuestionViewCount/${pollData.data._id}/${currentQuestionIndex}`, {
+                await axios.put(`https://one2ayusharikar-gmail-com-cuvette-final-ha81.onrender.com/updateQuestionViewCount/${pollData.data._id}/${currentQuestionIndex}`, {
                     selectedOption: selectedOption
                 });
             } catch (error) {
