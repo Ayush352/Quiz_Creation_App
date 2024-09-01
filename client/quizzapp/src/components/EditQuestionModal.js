@@ -15,8 +15,8 @@ const EditQuestionModal = ({ isOpen, onRequestClose, quizTitle, quizType, editId
         if (isOpen && editId) {
             const fetchQuizData = async () => {
                 try {
-                    const quizzesResponse = await axios.get('http://localhost:4000/users/quizzes'); // Update with your endpoint
-            const pollsResponse = await axios.get('http://localhost:4000/users/polls'); // Update with your endpoint
+                    const quizzesResponse = await axios.get('https://one2ayusharikar-gmail-com-cuvette-final-ha81.onrender.com/users/quizzes'); // Update with your endpoint
+            const pollsResponse = await axios.get('https://one2ayusharikar-gmail-com-cuvette-final-ha81.onrender.com/users/polls'); // Update with your endpoint
     
             const combinedData = [
               ...quizzesResponse.data.data.map(item => ({ ...item, type: 'quiz' })),
@@ -157,10 +157,10 @@ const EditQuestionModal = ({ isOpen, onRequestClose, quizTitle, quizType, editId
                 questionText: question.questionText || 'Default Question Text'
             }));
             if(isQuiz===true){
-                await axios.put(`http://localhost:4000/users/updateQuiz/${editId}`, { quizTitle, questions: validQuestions, quizType });
+                await axios.put(`https://one2ayusharikar-gmail-com-cuvette-final-ha81.onrender.com/users/updateQuiz/${editId}`, { quizTitle, questions: validQuestions, quizType });
             }
             else{
-                await axios.put(`http://localhost:4000/users/updatePoll/${editId}`, { quizTitle, questions: validQuestions, quizType });
+                await axios.put(`https://one2ayusharikar-gmail-com-cuvette-final-ha81.onrender.com/users/updatePoll/${editId}`, { quizTitle, questions: validQuestions, quizType });
             }
             
             console.log("Quiz updated successfully!");
