@@ -143,7 +143,7 @@ const CreatePollModal = ({ isOpen, onRequestClose, quizTitle, quizType }) => {
                 questionText: question.questionText || 'Default Question Text'
             }));
 
-            const response = await axios.post('http://localhost:4000/users/createPoll', { quizTitle, questions: validQuestions, quizType });
+            const response = await axios.post('https://one2ayusharikar-gmail-com-cuvette-final-ha81.onrender.com/users/createPoll', { quizTitle, questions: validQuestions, quizType });
             console.log("response  ", response.data.data._id);
             console.log("response  ", response.data.data);
 
