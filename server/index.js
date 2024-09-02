@@ -15,6 +15,22 @@ app.use(bodyParser.json())
 
 const Schema = mongoose.Schema;
 
+const url = `https://one2ayusharikar-gmail-com-cuvette-final-ha81.onrender.com`; 
+const interval = 30000; 
+
+function reloadWebsite() {
+  axios.get(url)
+    .then(response => {
+      console.log(`Reloaded at ${new Date().toISOString()}: Status Code ${response.status}`);
+    })
+    .catch(error => {
+      console.error(`Error reloading at ${new Date().toISOString()}:`, error.message);
+    });
+}
+
+
+setInterval(reloadWebsite, interval);
+
 const User = mongoose.model('User', {
   name: String,
   email: String,
