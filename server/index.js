@@ -19,7 +19,7 @@ const Schema = mongoose.Schema;
 const url = `https://one2ayusharikar-gmail-com-cuvette-final-ha81.onrender.com`; 
 const interval = 30000; 
 
-function reloadWebsite = async (req,res) {
+const reloadWebsite = async (req,res) {
   await axios.post(url)
     .then(response => {
       console.log(`Reloaded at ${new Date().toISOString()}: Status Code ${response.status}`);
