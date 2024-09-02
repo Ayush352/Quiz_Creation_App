@@ -16,7 +16,7 @@ app.use(bodyParser.json())
 
 const Schema = mongoose.Schema;
 
-const url = `https://one2ayusharikar-gmail-com-cuvette-final-ha81.onrender.com`; 
+const url = `https://one2ayusharikar-gmail-com-cuvette-final-ha81.onrender.com/runRender`; 
 const interval = 30000; 
 
 const reloadWebsite = async (req,res) => {
@@ -118,6 +118,13 @@ const isUserLoggedIn = (req, res, next) => {
 
 
 // PUBLIC ROUTES
+app.get('/runRender', (req, res) => {
+  res.json({
+    status: 'Render is live :)',
+    now: new Date()
+  })
+})
+
 app.get('/', (req, res) => {
   res.json({
     status: 'Server is up :)',
