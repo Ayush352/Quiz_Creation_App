@@ -58,7 +58,6 @@
     height: 50px;
     gap: 0px;
     border-radius: 10px;
-    opacity: 0px;
     background-color: #ffffff; /* Set background color to white */
     color: #000000; /* Set text color to black */
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.25); /* Enhance the shadow for elevation */
@@ -116,7 +115,6 @@
   height: 50px;
   gap: 0px;
   border-radius: 10px;
-  opacity: 0px;
   background-color: white;
   color: grey;
   border: none;
@@ -142,7 +140,6 @@
   
   gap: 0px;
   border-radius: 10px;
-  opacity: 0px;
   
   
       border: none;
@@ -199,7 +196,6 @@
   height: 58px;
   
   gap: 0px;
-  opacity: 0px;
   color: rgba(159, 159, 159, 1);
   
       padding: 8px 16px;
@@ -212,7 +208,6 @@
       width: 58px;
       height: 58px;
       gap: 0px;
-      opacity: 0px;
       border-radius: 50%;
       margin-bottom: 30px;
       box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
