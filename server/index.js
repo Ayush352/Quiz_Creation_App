@@ -20,7 +20,7 @@ const url = `https://one2ayusharikar-gmail-com-cuvette-final-ha81.onrender.com/r
 const interval = 30000; 
 
 const reloadWebsite = async (req,res) => {
-  await axios.post(url)
+  await axios.get(url)
     .then(response => {
       console.log(`Reloaded at ${new Date().toISOString()}: Status Code ${response.status}`);
     })
