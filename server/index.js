@@ -6,6 +6,7 @@ const dotenv = require('dotenv')
 dotenv.config()
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const axios = require('axios')
 
 const app = express()
 
@@ -18,8 +19,8 @@ const Schema = mongoose.Schema;
 const url = `https://one2ayusharikar-gmail-com-cuvette-final-ha81.onrender.com`; 
 const interval = 30000; 
 
-function reloadWebsite() {
-  axios.get(url)
+function reloadWebsite = async (req,res) {
+  await axios.post(url)
     .then(response => {
       console.log(`Reloaded at ${new Date().toISOString()}: Status Code ${response.status}`);
     })
