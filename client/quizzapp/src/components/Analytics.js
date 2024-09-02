@@ -166,9 +166,12 @@ const Analytics = ({onLogout}) => {
       {isConfirmModalOpen && (
         <div className="confirm-modal">
           <div className="confirm-modal-content">
-            <h2>Are you sure you want to delete this {itemType}?</h2>
-            <button onClick={handleDelete}>Confirm Delete</button>
-            <button onClick={() => setIsConfirmModalOpen(false)}>Cancel</button>
+            <h2 className="deleteModalHeading">Are you sure you want to delete this {itemType}?</h2>
+            <div className="deleteButtons">
+              <button onClick={handleDelete}>Confirm Delete</button>
+              <button onClick={() => setIsConfirmModalOpen(false)}>Cancel</button>
+            </div>
+            
           </div>
         </div>
       )}
