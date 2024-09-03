@@ -1,17 +1,17 @@
-/* Apply the Poppins font to the entire form */
+
 .login-form {
     font-family: 'Poppins', sans-serif;
     width: 606px;
     height: 245px;
     border-radius: 10px 10px 0px 0px;
-    border: none; /* Remove outer border */
+    border: none; 
     display: flex;
     flex-direction: column;
     padding: 20px;
-    background-color: #fff; /* Remove background color */
+    background-color: #fff; 
   }
   
-  /* Form styling */
+  
   .login-form form {
     display: flex;
     flex-direction: column;
@@ -23,7 +23,7 @@
     align-items: center;
   }
   
-  /* Align label and input horizontally */
+ 
   .login-form form div.label-input-group {
     display: flex;
     align-items: center;
@@ -32,44 +32,44 @@
   .login-form form label {
     width: 30%;
     margin-right: 20px;
-    font-size: 20px; /* Updated font size */
-    font-weight: 600; /* Updated font weight */
-    line-height: 30px; /* Updated line height */
-    text-align: left; /* Align text to the left */
-    color: rgba(71, 68, 68, 1); /* Updated color */
+    font-size: 20px;
+    font-weight: 600; 
+    line-height: 30px; 
+    text-align: left; 
+    color: rgba(71, 68, 68, 1); 
   }
   
   .login-form form input {
     width: 70%;
     padding: 10px;
-    border: 1px solid #ccc; /* Border for input fields */
+    border: 1px solid #ccc; 
     border-radius: 5px;
     font-size: 16px;
   }
   
   .login-form form input.error {
-    border: 1px solid red; /* Red border for errors */
+    border: 1px solid red; 
   }
   
   .login-form form button {
-    width: 274px; /* Updated width */
-    height: 38px; /* Updated height */
-    background: rgba(169, 188, 255, 1); /* Button color */
-    color: rgba(71, 68, 68, 1); /* Text color for buttons */
+    width: 274px;
+    height: 38px;
+    background: rgba(169, 188, 255, 1); 
+    color: rgba(71, 68, 68, 1); 
     border: none;
-    border-radius: 8px; /* Updated border-radius */
+    border-radius: 8px; 
     cursor: pointer;
-    font-size: 20px; /* Updated font size */
-    font-weight: 600; /* Updated font weight */
-    line-height: 30px; /* Updated line height */
-    text-align: center; /* Center text inside button */
+    font-size: 20px;
+    font-weight: 600; 
+    line-height: 30px; 
+    text-align: center; 
     transition: background-color 0.3s ease;
-    margin-top: 35px; /* Add spacing between form fields and button */
+    margin-top: 35px; 
     margin-left: 190px;
   }
   
   .login-form form button:hover {
-    background-color: rgba(139, 162, 255, 1); /* Slightly darker shade on hover */
+    background-color: rgba(139, 162, 255, 1); 
   }
   
   .login-form p {
@@ -79,7 +79,7 @@
     font-size: 14px;
   }
   
-  /* Ensure Confirm Password is on the same line as Password */
+ 
   .login-form form div.confirm-password-group {
     display: flex;
     align-items: center;
@@ -91,23 +91,23 @@
   }
   
   button {
-    width: 274px; /* Updated width */
-    height: 38px; /* Updated height */
-    background: #fff; /* White background color */
-    color: rgba(71, 68, 68, 1); /* Text color */
-    border: 1px solid #ccc; /* Border color */
-    border-radius: 8px 0px 0px 0px; /* Border-radius */
+    width: 274px;
+    height: 38px; 
+    background: #fff; 
+    color: rgba(71, 68, 68, 1); 
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
     cursor: pointer;
-    font-size: 20px; /* Font size */
-    font-weight: 600; /* Font weight */
-    line-height: 30px; /* Line height */
-    text-align: center; /* Center text inside button */
+    font-size: 20px; 
+    font-weight: 600; 
+    line-height: 30px; 
+    text-align: center; 
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    margin-top: 20px; /* Add spacing between form fields and button */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Shadow behind button */
+    margin-top: 20px; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); 
   }
   
-  /* Button hover effect */
+ 
   button:hover {
-    background-color: rgba(240, 240, 240, 1); /* Light gray on hover */
+    background-color: rgba(240, 240, 240, 1); 
   }

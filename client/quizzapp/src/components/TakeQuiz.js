@@ -149,7 +149,7 @@ const TakeQuiz = () => {
                             {currentQuestion.options.map((option, index) => (
                                 <button
                                     key={index}
-                                    className={`option ${selectedOption === option.text || selectedOption === option.imageUrl  ? 'selected' : ''}`}
+                                    className={`option ${selectedOption === (option.imageUrl || option.text) ? 'selected' : ''}`}
                                     onClick={() => handleOptionClick(option.text)}
                                 >
                                     {option.text && <span>{option.text}</span>}
