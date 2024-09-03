@@ -72,7 +72,7 @@
     cursor: pointer; /* Make the whole option clickable */
 }
 
-.option-input-wrapper.correct-answer .option-input {
+.option-input-wrapper.correct-answer-quiz .option-input {
     background-color: rgba(96, 184, 75, 1);
 
 }
@@ -181,9 +181,6 @@ border-radius: 10px;
     width: 100%; /* Full width of the container */
 }
 
-.option-input-wrapper.correct-answer .option-input {
-    background-color: #d4edda; /* Light green background for the selected option's input field */
-}
 
 .top-buttons-container {
     display: flex;

@@ -6,6 +6,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import SuccessModal from './SuccessModal';
 
+
 const CreateQuestionsModal = ({ isOpen, onRequestClose, quizTitle, quizType }) => {
     const [questions, setQuestions] = useState([
         { 
@@ -20,8 +21,6 @@ const CreateQuestionsModal = ({ isOpen, onRequestClose, quizTitle, quizType }) =
         }
     ]);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-    const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
-    const [quizLink, setQuizLink] = useState('');
     const navigate = useNavigate();
 
     const currentQuestion = questions[currentQuestionIndex];
@@ -161,9 +160,7 @@ const CreateQuestionsModal = ({ isOpen, onRequestClose, quizTitle, quizType }) =
             console.log("response  ", response.data.data);
 
             const randomToken = response.data.data._id;
-            const newQuizLink = `https://one2ayusharikar-gmail-com-cuvette-final-ha81.onrender.com/takeQuiz/${randomToken}`;
-            setIsSuccessModalOpen(true);
-            setQuizLink(newQuizLink);
+            
             navigate(`/takeQuiz/${randomToken}`);
 
             handleCancel(); // Reset the form after submission
@@ -172,13 +169,7 @@ const CreateQuestionsModal = ({ isOpen, onRequestClose, quizTitle, quizType }) =
         }
     };
 
-    onRequestClose=()=>{
-        isOpen=false;
-    }
 
-    const handleCloseSuccessModal = () => {
-        setIsSuccessModalOpen(false);
-    };
 
     return (
         <>
@@ -253,7 +244,7 @@ const CreateQuestionsModal = ({ isOpen, onRequestClose, quizTitle, quizType }) =
                                     key={index}
                                     onClick={() => handleOptionClick(index)}
                                 >
-                                    <div className={`option-input-wrapper ${currentQuestion.correctOption === index.toString() ? 'correct-answer' : ''}`}>
+                                    <div className={`option-input-wrapper ${currentQuestion.correctOption === index.toString() ? 'correct-answer-quiz' : ''}`}>
                                         <input 
                                             type="radio" 
                                             name="optionInput" 
@@ -304,7 +295,7 @@ const CreateQuestionsModal = ({ isOpen, onRequestClose, quizTitle, quizType }) =
                         <div className="options-container">
                             {currentQuestion.options.map((option, index) => (
                                 <div
-                                    className={`option-input-wrapper ${currentQuestion.correctOption === index.toString() ? 'correct-answer' : ''}`} 
+                                    className={`option-input-wrapper ${currentQuestion.correctOption === index.toString() ? 'correct-answer-quiz' : ''}`} 
                                     key={index}
                                     onClick={() => handleOptionClick(index)}
                                 >
@@ -359,7 +350,7 @@ const CreateQuestionsModal = ({ isOpen, onRequestClose, quizTitle, quizType }) =
                         <div className="options-container">
                             {currentQuestion.options.map((option, index) => (
                                 <div
-                                    className={`option-input-wrapper ${currentQuestion.correctOption === index.toString() ? 'correct-answer' : ''}`} 
+                                    className={`option-input-wrapper ${currentQuestion.correctOption === index.toString() ? 'correct-answer-quiz' : ''}`} 
                                     key={index}
                                     onClick={() => handleOptionClick(index)}
                                 >
@@ -422,11 +413,6 @@ const CreateQuestionsModal = ({ isOpen, onRequestClose, quizTitle, quizType }) =
                 </div>
             </div>
         </Modal>
-        <SuccessModal
-        isOpen={isSuccessModalOpen}
-        onRequestClose={handleCloseSuccessModal}
-        quizLink={quizLink}
-    />
     </>
     );
 };
