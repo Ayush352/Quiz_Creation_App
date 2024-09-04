@@ -29,6 +29,7 @@ const CreateQuizModal = ({ isOpen, onRequestClose, quizTitle, setQuizTitle }) =>
 
   const handleContinue = () => {
     setIsModal2Open(true);
+    onRequestClose();
   };
 
   const handleInputChange = (e) => {

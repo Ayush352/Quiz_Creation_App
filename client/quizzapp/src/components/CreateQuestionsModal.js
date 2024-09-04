@@ -22,6 +22,10 @@ const CreateQuestionsModal = ({ isOpen, onRequestClose, quizTitle, quizType }) =
     ]);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const navigate = useNavigate();
+    const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
+    const [quizUrl, setQuizUrl] = useState('');
+    let successopen = false;
+
 
     const currentQuestion = questions[currentQuestionIndex];
 
@@ -160,20 +164,27 @@ const CreateQuestionsModal = ({ isOpen, onRequestClose, quizTitle, quizType }) =
             console.log("response  ", response.data.data);
 
             const randomToken = response.data.data._id;
+            const url = `${window.location.origin}/takeQuiz/${randomToken}`;
+            setQuizUrl(url);
+            // Open SuccessModal with the URL
             
-            navigate(`/takeQuiz/${randomToken}`);
-
-            handleCancel(); // Reset the form after submission
+            //navigate(`/takeQuiz/${randomToken}`);
+            successopen = true;
+            setIsSuccessModalOpen(true); 
+            console.log("Create Question Modal before",isSuccessModalOpen, successopen);
+ // Reset the form after submission
+            setIsSuccessModalOpen(true); 
+            console.log("Create Question Modal after",isSuccessModalOpen, successopen);
         } catch (error) {
             console.error('Error creating quiz:', error.response?.data?.error || error.message);
         }
     };
 
-
+    console.log("Create Question Modal in main component",isSuccessModalOpen, successopen);
 
     return (
         <>
-        <Modal
+        {isSuccessModalOpen ===false ? (<Modal
             isOpen={isOpen}
             onRequestClose={onRequestClose}
             contentLabel="Create Quiz Questions"
@@ -412,7 +423,13 @@ const CreateQuestionsModal = ({ isOpen, onRequestClose, quizTitle, quizType }) =
                     <button className="action-button2" onClick={handleCreateQuiz}>Create Quiz</button>
                 </div>
             </div>
-        </Modal>
+        </Modal>)
+        :
+        (<SuccessModal
+    isOpen={isSuccessModalOpen}
+    onRequestClose={() => {setIsSuccessModalOpen(false); onRequestClose()}}
+    url={quizUrl}
+/>)}
     </>
     );
 };

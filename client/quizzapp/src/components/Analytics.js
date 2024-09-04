@@ -171,7 +171,7 @@ const Analytics = ({onLogout}) => {
               <div >want to delete ?</div>
             </div>
             <div className="deleteButtons">
-              <button className='confirm' onClick={handleDelete}>Confirm Delete</button>
+              <div className='confirm' onClick={handleDelete}>Confirm Delete</div>
               <button onClick={() => setIsConfirmModalOpen(false)}>Cancel</button>
             </div>
             
