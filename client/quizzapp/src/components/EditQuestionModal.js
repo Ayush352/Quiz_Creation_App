@@ -165,8 +165,8 @@ const EditQuestionModal = ({ isOpen, onRequestClose, quizTitle, quizType, editId
             
             console.log("Quiz updated successfully!");
 
-            navigate('/dashboard'); // Navigate back to dashboard or another page after saving
-            onRequestClose(); // Close the modal
+            navigate('/dashboard'); 
+            onRequestClose(); 
         } catch (error) {
             console.error('Error updating quiz:', error.response?.data?.error || error.message);
         }

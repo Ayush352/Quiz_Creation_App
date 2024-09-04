@@ -4,6 +4,7 @@ import './CreatePollModal.css';
 import { FaTrash } from 'react-icons/fa';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import SuccessModal from './SuccessModal';
 
 const CreatePollModal = ({ isOpen, onRequestClose, quizTitle, quizType }) => {
     const [questions, setQuestions] = useState([
@@ -17,6 +18,8 @@ const CreatePollModal = ({ isOpen, onRequestClose, quizTitle, quizType }) => {
     ]);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const navigate = useNavigate();
+    const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
+    const [quizUrl, setQuizUrl] = useState('');
 
     const currentQuestion = questions[currentQuestionIndex];
 
@@ -148,17 +151,21 @@ const CreatePollModal = ({ isOpen, onRequestClose, quizTitle, quizType }) => {
             console.log("response  ", response.data.data);
 
             const randomToken = response.data.data._id;
+            const url = `${window.location.origin}/takePoll/${randomToken}`;
+            setQuizUrl(url);
+            
+            setIsSuccessModalOpen(true); 
     
-            navigate(`/takePoll/${randomToken}`);
 
-            handleCancel(); // Reset the form after submission
+            handleCancel(); 
         } catch (error) {
             console.error('Error creating quiz:', error.response?.data?.error || error.message);
         }
     };
 
     return (
-        <Modal
+        <>
+        {isSuccessModalOpen===false ? (<Modal
             isOpen={isOpen}
             onRequestClose={onRequestClose}
             contentLabel="Create Quiz Questions"
@@ -341,7 +348,15 @@ const CreatePollModal = ({ isOpen, onRequestClose, quizTitle, quizType }) => {
                     <button className="action-button2" onClick={handleCreateQuiz}>Create Quiz</button>
                 </div>
             </div>
-        </Modal>
+        </Modal>)
+        :
+        (<SuccessModal
+    isOpen={isSuccessModalOpen}
+    onRequestClose={() => {setIsSuccessModalOpen(false); onRequestClose()}}
+    url={quizUrl}
+/>)}
+
+        </>
     );
 };
 

@@ -24,7 +24,6 @@ const CreateQuestionsModal = ({ isOpen, onRequestClose, quizTitle, quizType }) =
     const navigate = useNavigate();
     const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
     const [quizUrl, setQuizUrl] = useState('');
-    let successopen = false;
 
 
     const currentQuestion = questions[currentQuestionIndex];
@@ -166,21 +165,13 @@ const CreateQuestionsModal = ({ isOpen, onRequestClose, quizTitle, quizType }) =
             const randomToken = response.data.data._id;
             const url = `${window.location.origin}/takeQuiz/${randomToken}`;
             setQuizUrl(url);
-            // Open SuccessModal with the URL
             
-            //navigate(`/takeQuiz/${randomToken}`);
-            successopen = true;
             setIsSuccessModalOpen(true); 
-            console.log("Create Question Modal before",isSuccessModalOpen, successopen);
- // Reset the form after submission
-            setIsSuccessModalOpen(true); 
-            console.log("Create Question Modal after",isSuccessModalOpen, successopen);
         } catch (error) {
             console.error('Error creating quiz:', error.response?.data?.error || error.message);
         }
     };
 
-    console.log("Create Question Modal in main component",isSuccessModalOpen, successopen);
 
     return (
         <>
